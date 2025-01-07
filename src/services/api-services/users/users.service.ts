@@ -1,5 +1,9 @@
 import type { Profile } from '@/types/entities/profile.type';
-import type { User } from '@/types/entities/user.type';
+import type {
+  PasswordUpdate,
+  User,
+  UserUpdate,
+} from '@/types/entities/user.type';
 import type { SortOrders } from '@/types/enums/sort-order.enum';
 import type { GetOptions } from '@/types/utils/get-options.type';
 import type { ResponseMessage } from '@/types/utils/response-message.type';
@@ -40,7 +44,10 @@ class UsersService {
       .data;
   }
 
-  async update(id: string, userUpdate: FormData): ResponseMessage {
+  async update(
+    id: string,
+    userUpdate: FormData | UserUpdate | PasswordUpdate,
+  ): ResponseMessage {
     return (await apiWithAuth.patch(`/users/${id}`, userUpdate)).data;
   }
 

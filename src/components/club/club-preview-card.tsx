@@ -22,5 +22,3 @@ export const ClubPreviewCard = ({
     </Link>
   );
 };
-
-// TODO передивитись яке там зорбраження в аватарі IMAGE or img or picture

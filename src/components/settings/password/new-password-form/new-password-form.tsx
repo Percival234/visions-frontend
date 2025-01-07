@@ -1,8 +1,11 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { toast } from 'sonner';
+
+import type { PasswordUpdate } from '@/types/entities/user.type';
 
 import { Button } from '@/ui/button';
 import {
@@ -16,25 +19,23 @@ import {
 import { Input } from '@/ui/input';
 import { Label } from '@/ui/label';
 
-const formSchema = z
-  .object({
-    currentPassword: z.string().min(1, "Це поле обов'язкове"),
-    newPassword: z
-      .string()
-      .min(8, 'Мінімальна довжина 8 символів')
-      .max(16, 'Максимальна довжина 16 символів'),
-    confirmNewPassword: z.string(),
-  })
-  .refine((data) => data.newPassword === data.confirmNewPassword, {
-    message: 'Паролі не співпадають',
-    path: ['confirmNewPassword'],
-  });
+import { authService } from '@/services/api-services/auth/auth.service';
+import { usersService } from '@/services/api-services/users/users.service';
 
-type NewPasswordFormSchema = z.infer<typeof formSchema>;
+import {
+  type NewPasswordFormSchema,
+  newPasswordFormSchema,
+} from './new-password-schema';
 
-export const NewPasswordForm = () => {
+interface NewPasswordFormProps {
+  userId: string;
+}
+
+export const NewPasswordForm = ({ userId }: NewPasswordFormProps) => {
+  const client = useQueryClient();
+
   const form = useForm<NewPasswordFormSchema>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(newPasswordFormSchema),
     defaultValues: {
       currentPassword: '',
       newPassword: '',
@@ -42,18 +43,29 @@ export const NewPasswordForm = () => {
     },
   });
 
-  const { formState, handleSubmit, control } = form;
-  const { isSubmitting } = formState;
+  const { mutate, isPending } = useMutation({
+    mutationFn: (passwordData: PasswordUpdate) =>
+      usersService.update(userId, passwordData),
+    onSuccess: async (response) => {
+      toast.success(response.message);
+      await authService.logout();
+      client.invalidateQueries({ queryKey: ['profile'] });
+      form.reset();
+    },
+  });
 
-  function onSubmit(values: NewPasswordFormSchema) {
-    console.log(values);
-  }
+  const onSubmit = ({
+    newPassword,
+    currentPassword,
+  }: NewPasswordFormSchema) => {
+    mutate({ newPassword, currentPassword });
+  };
 
   return (
     <Form {...form}>
-      <form className="w-80 space-y-2" onSubmit={handleSubmit(onSubmit)}>
+      <form className="w-80 space-y-2" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
-          control={control}
+          control={form.control}
           name="currentPassword"
           render={({ field }) => (
             <FormItem>
@@ -68,7 +80,7 @@ export const NewPasswordForm = () => {
           )}
         />
         <FormField
-          control={control}
+          control={form.control}
           name="newPassword"
           render={({ field }) => (
             <FormItem>
@@ -84,7 +96,7 @@ export const NewPasswordForm = () => {
           )}
         />
         <FormField
-          control={control}
+          control={form.control}
           name="confirmNewPassword"
           render={({ field }) => (
             <FormItem>
@@ -101,7 +113,7 @@ export const NewPasswordForm = () => {
           )}
         />
         <div>
-          <Button type="submit" className="mt-2">
+          <Button disabled={isPending} type="submit" className="mt-2">
             Зберегти
           </Button>
         </div>

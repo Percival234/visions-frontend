@@ -4,8 +4,6 @@ import { Button } from '@/ui/button';
 import { Checkbox } from '@/ui/checkbox';
 import { Label } from '@/ui/label';
 
-// TODO можливо розширити інтерфейс типом інпуту
-
 interface CheckboxButtonProps {
   id: string;
   label: string;

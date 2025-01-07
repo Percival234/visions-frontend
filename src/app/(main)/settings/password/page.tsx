@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Paragraph } from '@/ui/paragraph';
 import { Title } from '@/ui/title';
 
-import { NewPasswordForm } from '@/components/settings/password/new-password-form';
+import { NewPasswordForm } from '@/components/settings/password/new-password-form/new-password-form';
 
 export const metadata: Metadata = {
   title: 'Налаштування | Зміна паролю',

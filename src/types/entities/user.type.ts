@@ -6,7 +6,7 @@ export type User = {
   avatar: string;
   username: string;
   location: string;
-  quote: string;
+  about: string;
   roles: UserRoles[];
   isDeleted: boolean;
   isBlocked: boolean;
@@ -26,4 +26,4 @@ export type UserUpdate = Partial<
   >
 >;
 
-// TODO qoute to about
+export type PasswordUpdate = { currentPassword: string; newPassword: string };
