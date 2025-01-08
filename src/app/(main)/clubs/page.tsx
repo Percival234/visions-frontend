@@ -32,5 +32,3 @@ export default function Page() {
     </CenteredContainer>
   );
 }
-
-// TODO ADD gap between title and button

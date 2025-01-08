@@ -5,7 +5,7 @@ export type Settings = {
   profileVisibility: Visibility;
   galleryVisibility: Visibility;
   theme: 'dark' | 'light' | 'system';
-  colorTheme: ''; // TODO implement correct type
+  colorTheme: string;
   allowDownload: boolean;
   allowClubsPosts: boolean;
   allowFollowingsPosts: boolean;
