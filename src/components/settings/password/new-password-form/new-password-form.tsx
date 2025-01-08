@@ -7,7 +7,6 @@ import { toast } from 'sonner';
 
 import type { PasswordUpdate } from '@/types/entities/user.type';
 
-import { Button } from '@/ui/button';
 import {
   Form,
   FormControl,
@@ -18,6 +17,7 @@ import {
 } from '@/ui/form';
 import { PasswordInput } from '@/ui/input';
 import { Label } from '@/ui/label';
+import { SubmitButton } from '@/ui/submit-button';
 
 import { authService } from '@/services/api-services/auth/auth.service';
 import { usersService } from '@/services/api-services/users/users.service';
@@ -117,14 +117,16 @@ export const NewPasswordForm = ({ userId }: NewPasswordFormProps) => {
           )}
         />
         <div>
-          <Button disabled={isPending} type="submit" className="mt-2">
+          <SubmitButton
+            submittingText="Збереження"
+            disabled={isPending}
+            type="submit"
+            className="mt-2"
+          >
             Зберегти
-          </Button>
+          </SubmitButton>
         </div>
       </form>
     </Form>
   );
 };
-
-// TODO SET PASSWORD EYE AND TYPE INPUT "PASSWORD" in RESET-PASS LOGIN REGISTER AND NEW PASS
-// TODO ALL FORM BUTTONS ADD SPIN ANIMATION AND SERVER ERROR HANDLER FOR MESSAGE

@@ -17,6 +17,7 @@ import {
 } from '@/ui/form';
 import { Icon } from '@/ui/icon';
 import { Input, PasswordInput } from '@/ui/input';
+import { SubmitButton } from '@/ui/submit-button';
 
 import { authService } from '@/services/api-services/auth/auth.service';
 import type { AuthSignIn } from '@/services/api-services/auth/auth.service.types';
@@ -86,16 +87,9 @@ export const SignInForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isPending}>
-          {isPending ? (
-            <div className="flex items-center gap-2">
-              <span className="animate-spin w-5 h-5 rounded-full border-[3px] border-solid border-background/50 border-r-background"></span>
-              Обробка
-            </div>
-          ) : (
-            <span>Вхід</span>
-          )}
-        </Button>
+        <SubmitButton submittingText="Підтвердження" disabled={isPending}>
+          Вхід
+        </SubmitButton>
         <div className="py-4 relative flex items-center justify-center">
           <div className="absolute bg-background px-2 leading-none text-sm text-muted-foreground">
             або

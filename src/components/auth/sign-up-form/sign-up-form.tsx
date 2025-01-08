@@ -9,6 +9,7 @@ import { Button } from '@/ui/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/ui/form';
 import { Icon } from '@/ui/icon';
 import { Input, PasswordInput } from '@/ui/input';
+import { SubmitButton } from '@/ui/submit-button';
 
 import { authService } from '@/services/api-services/auth/auth.service';
 import type { AuthSignUp } from '@/services/api-services/auth/auth.service.types';
@@ -38,9 +39,9 @@ export const SignUpForm = () => {
     },
   });
 
-  function onSubmit({ email, password, username }: SignUpFormSchema) {
+  const onSubmit = ({ email, password, username }: SignUpFormSchema) => {
     mutate({ email, password, username });
-  }
+  };
 
   return (
     <Form {...form}>
@@ -93,16 +94,9 @@ export const SignUpForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isPending}>
-          {isPending ? (
-            <div className="flex items-center gap-2">
-              <span className="animate-spin w-5 h-5 rounded-full border-[3px] border-solid border-background/50 border-r-background"></span>
-              Обробка
-            </div>
-          ) : (
-            <span>Зареєструватись</span>
-          )}
-        </Button>
+        <SubmitButton submittingText="Підтвердження" disabled={isPending}>
+          Зареєструватись
+        </SubmitButton>
         <div className="py-4 relative flex items-center justify-center">
           <div className="absolute bg-background px-2 leading-none text-sm text-muted-foreground">
             або
