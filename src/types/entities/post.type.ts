@@ -21,6 +21,8 @@ export type Post = {
 };
 export type PostPreview = Pick<Post, 'id' | 'title' | 'categories' | 'image'>;
 
-export type PostCreate = Pick<Post, 'description' | 'title'>;
+export type PostCreate = Pick<Post, 'title' | 'description' | 'visibility'> & {
+  categoriesIds: [];
+};
 
 export type PostUpdate = Partial<PostCreate>;

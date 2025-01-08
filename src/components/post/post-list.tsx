@@ -15,7 +15,7 @@ export const PostList = ({ posts }: PostListProps) => {
       className="flex-col"
       data={posts}
       renderItem={(post) => <PostCard key={post.id} post={post} />}
-      EmptyComponent={<EmptyState text="Публікації відсутні" />} // TODO add correct empty state maybe with gifs or png image2
+      EmptyComponent={<EmptyState text="Публікації відсутні" />}
     />
   );
 };
