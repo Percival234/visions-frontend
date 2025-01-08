@@ -5,7 +5,6 @@ import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 
 import { Button } from '@/ui/button';
 import {
@@ -26,12 +25,7 @@ import { useAuthStore } from '@/store/useAuth.store';
 
 import { authRoutes } from '@/constants/pages.constant';
 
-const signInFormSchema = z.object({
-  email: z.string().email('Недійсна електронна адреса'),
-  password: z.string().min(1, "Це поле обов'язкове"),
-});
-
-type SignInFormSchema = z.infer<typeof signInFormSchema>;
+import { type SignInFormSchema, signInFormSchema } from './sign-in-schema';
 
 export const SignInForm = () => {
   const { setToken } = useAuthStore();
@@ -53,8 +47,6 @@ export const SignInForm = () => {
   });
 
   const onSubmit = (values: SignInFormSchema) => mutate(values);
-
-  // TODO винести схеми окремо
 
   return (
     <Form {...form}>
