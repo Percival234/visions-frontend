@@ -5,7 +5,6 @@ import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
-import { toast } from 'sonner';
 import { z } from 'zod';
 
 import { Button } from '@/ui/button';
@@ -18,7 +17,7 @@ import {
   FormMessage,
 } from '@/ui/form';
 import { Icon } from '@/ui/icon';
-import { Input } from '@/ui/input';
+import { Input, PasswordInput } from '@/ui/input';
 
 import { authService } from '@/services/api-services/auth/auth.service';
 import type { AuthSignIn } from '@/services/api-services/auth/auth.service.types';
@@ -81,7 +80,7 @@ export const SignInForm = () => {
           render={({ field }) => (
             <FormItem className="mb-3">
               <FormControl>
-                <Input type="password" placeholder="Пароль" {...field} />
+                <PasswordInput placeholder="Пароль" {...field} />
               </FormControl>
               <FormMessage />
               <FormDescription>

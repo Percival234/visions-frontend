@@ -9,7 +9,7 @@ import { z } from 'zod';
 import { Button } from '@/ui/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/ui/form';
 import { Icon } from '@/ui/icon';
-import { Input } from '@/ui/input';
+import { Input, PasswordInput } from '@/ui/input';
 
 import { authService } from '@/services/api-services/auth/auth.service';
 import type { AuthSignUp } from '@/services/api-services/auth/auth.service.types';
@@ -97,7 +97,7 @@ export const SignUpForm = () => {
           render={({ field }) => (
             <FormItem className="mb-4">
               <FormControl>
-                <Input type="password" placeholder="Пароль" {...field} />
+                <PasswordInput placeholder="Пароль" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -109,11 +109,7 @@ export const SignUpForm = () => {
           render={({ field }) => (
             <FormItem className="mb-4">
               <FormControl>
-                <Input
-                  type="password"
-                  placeholder="Підтвердження паролю"
-                  {...field}
-                />
+                <PasswordInput placeholder="Підтвердження паролю" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

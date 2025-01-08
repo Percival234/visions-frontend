@@ -1,11 +1,13 @@
-import * as React from 'react';
+import { type InputHTMLAttributes, forwardRef, useState } from 'react';
 
 import { cn } from '@/libs/cn/cn';
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+import { Button } from './button';
+import { Icon } from './icon';
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+
+const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (
       <input
@@ -22,4 +24,37 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 );
 Input.displayName = 'Input';
 
-export { Input };
+export interface PasswordInputProps
+  extends InputHTMLAttributes<HTMLInputElement> {}
+
+const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
+  (props, ref) => {
+    const [isVisible, setVisible] = useState(false);
+
+    const togglePasswordVisibility = () => setVisible((prev) => !prev);
+
+    return (
+      <div className="relative flex items-center justify-end">
+        <Input
+          type={isVisible ? 'text' : 'password'}
+          ref={ref}
+          {...props}
+          className="pr-12"
+        />
+        <Button
+          type="button"
+          size="icon"
+          variant="ghost"
+          onClick={togglePasswordVisibility}
+          className="absolute right-0"
+        >
+          <Icon iconName={isVisible ? 'eye' : 'noEye'} />
+        </Button>
+      </div>
+    );
+  },
+);
+
+PasswordInput.displayName = 'PasswordInput';
+
+export { PasswordInput, Input };

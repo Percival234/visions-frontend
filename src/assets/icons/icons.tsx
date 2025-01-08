@@ -16,6 +16,8 @@ import {
   LuChevronsUpDown,
   LuCircleOff,
   LuContact,
+  LuEye,
+  LuEyeOff,
   LuHelpCircle,
   LuImage,
   LuKeyRound,
@@ -89,4 +91,6 @@ export const ICONS = {
   loader: LuLoader,
   chevrons: LuChevronsUpDown,
   notifications: LuBellRing,
+  eye: LuEye,
+  noEye: LuEyeOff,
 };

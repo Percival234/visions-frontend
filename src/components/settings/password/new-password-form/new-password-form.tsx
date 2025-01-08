@@ -16,7 +16,7 @@ import {
   FormItem,
   FormMessage,
 } from '@/ui/form';
-import { Input } from '@/ui/input';
+import { PasswordInput } from '@/ui/input';
 import { Label } from '@/ui/label';
 
 import { authService } from '@/services/api-services/auth/auth.service';
@@ -72,7 +72,11 @@ export const NewPasswordForm = ({ userId }: NewPasswordFormProps) => {
               <FormControl>
                 <div className="space-y-2">
                   <Label htmlFor="currentPassword">Поточний пароль</Label>
-                  <Input id="currentPassword" type="password" {...field} />
+                  <PasswordInput
+                    id="currentPassword"
+                    type="password"
+                    {...field}
+                  />
                 </div>
               </FormControl>
               <FormMessage />
@@ -87,7 +91,7 @@ export const NewPasswordForm = ({ userId }: NewPasswordFormProps) => {
               <FormControl>
                 <div className="space-y-2">
                   <Label htmlFor="newPassword">Новий пароль</Label>
-                  <Input id="newPassword" type="password" {...field} />
+                  <PasswordInput id="newPassword" {...field} />
                 </div>
               </FormControl>
               <FormDescription>Довжина 6-18 символів</FormDescription>
@@ -105,7 +109,7 @@ export const NewPasswordForm = ({ userId }: NewPasswordFormProps) => {
                   <Label htmlFor="confirmNewPassword">
                     Підтвердження нового паролю
                   </Label>
-                  <Input id="confirmNewPassword" type="password" {...field} />
+                  <PasswordInput id="confirmNewPassword" {...field} />
                 </div>
               </FormControl>
               <FormMessage />

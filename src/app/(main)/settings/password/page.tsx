@@ -19,7 +19,9 @@ export default function Page() {
           Змінюйте свій пароль. Після збереження Ви вийдете з системи.
         </Paragraph>
       </div>
-      <NewPasswordForm />
+      <NewPasswordForm userId="" />
     </>
   );
 }
+
+// TODO вирішити питання з айді користувача
