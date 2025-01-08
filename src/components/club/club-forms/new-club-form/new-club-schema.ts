@@ -29,5 +29,3 @@ export const newClubFormSchema = z.object({
 });
 
 export type NewClubFormSchema = z.infer<typeof newClubFormSchema>;
-
-// TODO синхронізувати повідомлення валідації з сервером та розмір картинок валідувати шо тут шо на сервері

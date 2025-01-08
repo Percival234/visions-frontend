@@ -20,9 +20,11 @@ export type ClubWithoutOwner = Omit<Club, 'owner'>;
 
 export type ClubPreview = Pick<Club, 'id' | 'name' | 'image' | 'categories'>;
 
-export type ClubCreate = Pick<Club, 'name' | 'description'>; // TODO implement correct type for creation
+export type ClubCreate = Pick<Club, 'name' | 'description'> & {
+  categoriesIds: string[];
+};
 
-export type ClubUpdate = Partial<Pick<Club, 'name' | 'description'>>; // TODO implement correct type for creation
+export type ClubUpdate = Partial<ClubCreate>;
 
 export type ClubSettings = {
   id: string;
@@ -30,3 +32,5 @@ export type ClubSettings = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type ClubSettingsUpdate = Partial<Pick<ClubSettings, 'isPrivate'>>;
