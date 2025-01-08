@@ -1,4 +1,4 @@
-import './loaders.scss';
+import '@/styles/components/loader.scss';
 
 export const PageLoader = () => {
   return (
@@ -12,5 +12,3 @@ export const PageLoader = () => {
     </div>
   );
 };
-
-// TODO remove loaders.scss
