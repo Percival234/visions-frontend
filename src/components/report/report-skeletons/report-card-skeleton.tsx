@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader } from '@/ui/card';
-
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from '@/ui/skeleton';
 
 export const ReportCardSkeleton = () => {
   return (

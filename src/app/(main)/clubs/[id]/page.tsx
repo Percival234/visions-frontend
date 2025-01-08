@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 
 import type { PageProps } from '@/types/utils/page-props.type';
 
+import { CenteredContainer } from '@/ui/centered-container';
+
 import { ClubInfo } from '@/components/club/club-info';
-import { CenteredContainer } from '@/components/ui/centered-container';
 
 export const metadata: Metadata = {
   title: 'Клуби',

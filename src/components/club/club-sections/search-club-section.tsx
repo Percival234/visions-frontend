@@ -4,7 +4,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { Fragment } from 'react';
 import { toast } from 'sonner';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/ui/button';
 
 import { clubsService } from '@/services/api-services/clubs/clubs.service';
 

@@ -1,5 +1,5 @@
-import { List } from '@/components/ui/list';
-import { Skeleton } from '@/components/ui/skeleton';
+import { List } from '@/ui/list';
+import { Skeleton } from '@/ui/skeleton';
 
 import { numsArrayGenerator } from '@/helpers/generators/nums-array-generator';
 

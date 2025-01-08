@@ -8,7 +8,6 @@ import { toast } from 'sonner';
 import type { ReportCreate } from '@/types/entities/report.type';
 import { ReportTypes, reportTypes } from '@/types/enums/report-types.enum';
 
-import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -16,10 +15,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Textarea } from '@/components/ui/textarea';
-import { Title } from '@/components/ui/title';
+} from '@/ui/form';
+import { RadioGroup, RadioGroupItem } from '@/ui/radio-group';
+import { SubmitButton } from '@/ui/submit-button';
+import { Textarea } from '@/ui/textarea';
+import { Title } from '@/ui/title';
 
 import { reportsService } from '@/services/api-services/reports/reports.service';
 
@@ -99,9 +99,9 @@ export const NewReportForm = () => {
           )}
         />
         <div>
-          <Button type="submit" disabled={isPending}>
+          <SubmitButton submittingText="Надсиллання" disabled={isPending}>
             Надіслати
-          </Button>
+          </SubmitButton>
         </div>
       </form>
     </Form>

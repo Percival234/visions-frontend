@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
+import { Card, CardContent } from '@/ui/card';
+import { CenteredContainer } from '@/ui/centered-container';
+
 import { PostNewSection } from '@/components/post/post-sections/post-new-section';
-import { Card, CardContent } from '@/components/ui/card';
-import { CenteredContainer } from '@/components/ui/centered-container';
 
 export const metadata: Metadata = {
   title: 'Нові',

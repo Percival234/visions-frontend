@@ -1,4 +1,4 @@
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from '@/ui/skeleton';
 
 import { numsArrayGenerator } from '@/helpers/generators/nums-array-generator';
 

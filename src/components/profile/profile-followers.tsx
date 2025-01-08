@@ -1,9 +1,8 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/card';
+import { EmptyState } from '@/ui/empty-state';
 import { List } from '@/ui/list';
-
-import { EmptyState } from '@/components/ui/empty-state';
 
 interface ProfileFollowersProps {
   userId: string;

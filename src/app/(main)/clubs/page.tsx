@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { Button } from '@/ui/button';
+import { CenteredContainer } from '@/ui/centered-container';
+import { Separator } from '@/ui/separator';
+import { Title } from '@/ui/title';
+
 import { ClubSearch } from '@/components/club/club-search';
 import { SearchClubSection } from '@/components/club/club-sections/search-club-section';
-import { Button } from '@/components/ui/button';
-import { CenteredContainer } from '@/components/ui/centered-container';
-import { Separator } from '@/components/ui/separator';
-import { Title } from '@/components/ui/title';
 
 import { clubsRoutes } from '@/constants/pages.constant';
 

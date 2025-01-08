@@ -1,10 +1,10 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/card';
+import { EmptyState } from '@/ui/empty-state';
 import { List } from '@/ui/list';
 
 import { ClubPreview } from '@/components/club/club-preview-card';
-import { EmptyState } from '@/components/ui/empty-state';
 
 interface ProfileClubsProps {
   userId: string;

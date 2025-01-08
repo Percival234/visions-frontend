@@ -7,15 +7,10 @@ import { toast } from 'sonner';
 
 import type { CommentCreate } from '@/types/entities/comment.type';
 
-import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from '@/components/ui/form';
-import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/ui/button';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/ui/form';
+import { SubmitButton } from '@/ui/submit-button';
+import { Textarea } from '@/ui/textarea';
 
 import { commentsService } from '@/services/api-services/comments/comments.service';
 
@@ -83,9 +78,9 @@ export const NewCommentForm = ({ postId }: NewCommentFormProps) => {
               <Button onClick={close} variant="secondary">
                 Скасувати
               </Button>
-              <Button type="submit" disabled={isPending}>
+              <SubmitButton submittingText="Надсилання" disabled={isPending}>
                 Коментувати
-              </Button>
+              </SubmitButton>
             </div>
           </form>
         </Form>
@@ -95,5 +90,3 @@ export const NewCommentForm = ({ postId }: NewCommentFormProps) => {
     </>
   );
 };
-
-// TODO кнопка загрузки окрема

@@ -5,8 +5,7 @@ import { ClubRoles } from '@/types/enums/club-roles.enum';
 
 import { Badge } from '@/ui/badge';
 import { Title } from '@/ui/title';
-
-import { UserAvatar } from '@/components/ui/user-avatar';
+import { UserAvatar } from '@/ui/user-avatar';
 
 import { profilesRoutes } from '@/constants/pages.constant';
 

@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import type { LayoutProps } from '@/types/utils/layout-props.type';
 
 import { CenteredContainer } from '@/ui/centered-container';
+import { Separator } from '@/ui/separator';
 import { Title } from '@/ui/title';
 
 import { SettingsMenu } from '@/components/settings/menu/setting-menu';
-import { Separator } from '@/components/ui/separator';
 
 import { WEBSITE_NAME } from '@/constants/website-name.constant';
 

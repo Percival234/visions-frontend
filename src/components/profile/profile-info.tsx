@@ -1,6 +1,6 @@
 'use client';
 
-import { UserAvatar } from '@/components/ui/user-avatar';
+import { UserAvatar } from '@/ui/user-avatar';
 
 import { useGetProfileByIdQuery } from '@/hooks/queries-hooks/useGetProfileByIdQuery';
 

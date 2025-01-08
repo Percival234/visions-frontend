@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { Button } from '@/components/ui/button';
-import { Icon } from '@/components/ui/icon';
+import { Button } from '@/ui/button';
+import { Icon } from '@/ui/icon';
 
 import { mainRoutes } from '@/constants/pages.constant';
 import { WEBSITE_NAME } from '@/constants/website-name.constant';

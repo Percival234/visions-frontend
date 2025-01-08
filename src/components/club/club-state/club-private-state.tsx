@@ -1,4 +1,4 @@
-import { Paragraph } from '@/components/ui/paragraph';
+import { Paragraph } from '@/ui/paragraph';
 
 export const ClubPrivateState = () => {
   return (

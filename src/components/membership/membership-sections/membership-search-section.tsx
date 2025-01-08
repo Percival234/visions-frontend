@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 
 import { MembershipStatus } from '@/types/enums/membership-status.enum';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/ui/button';
 
 import { clubsService } from '@/services/api-services/clubs/clubs.service';
 

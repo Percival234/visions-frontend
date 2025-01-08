@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 
+import { CenteredContainer } from '@/ui/centered-container';
+import { Separator } from '@/ui/separator';
+import { Title } from '@/ui/title';
+
 import { NewReportForm } from '@/components/report/report-forms/new-report-form/new-report-form';
-import { CenteredContainer } from '@/components/ui/centered-container';
-import { Separator } from '@/components/ui/separator';
-import { Title } from '@/components/ui/title';
 
 export const metadata: Metadata = {
   title: 'Підтримка',

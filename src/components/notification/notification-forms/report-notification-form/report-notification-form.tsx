@@ -8,15 +8,9 @@ import { toast } from 'sonner';
 import type { NotificationCreate } from '@/types/entities/notification.type';
 import type { Report } from '@/types/entities/report.type';
 
-import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from '@/components/ui/form';
-import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/ui/button';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/ui/form';
+import { Textarea } from '@/ui/textarea';
 
 import { notificationsService } from '@/services/api-services/notifications/notifications.service';
 

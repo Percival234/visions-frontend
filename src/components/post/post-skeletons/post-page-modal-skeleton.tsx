@@ -2,8 +2,7 @@
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/ui/dialog';
 import { Skeleton } from '@/ui/skeleton';
-
-import { SROnly } from '@/components/ui/sr-only';
+import { SROnly } from '@/ui/sr-only';
 
 export const PostPageModalSkeleton = () => {
   return (

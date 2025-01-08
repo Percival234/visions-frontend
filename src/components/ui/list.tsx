@@ -1,6 +1,5 @@
+import { EmptyState } from '@/ui/empty-state';
 import { Icon } from '@/ui/icon';
-
-import { EmptyState } from '@/components/ui/empty-state';
 
 import { cn } from '@/libs/cn/cn';
 

@@ -2,7 +2,7 @@ import type { CheckedState } from '@radix-ui/react-checkbox';
 
 import type { Category } from '@/types/entities/category.type';
 
-import { CheckboxButton } from '@/components/ui/checkbox-button';
+import { CheckboxButton } from '@/ui/checkbox-button';
 
 interface ClubCategoryCheckboxProps {
   category: Category;

@@ -1,5 +1,5 @@
-import { type CollectionIconsName, Icon } from '@/components/ui/icon';
-import { MenuLink } from '@/components/ui/menu-link';
+import { type CollectionIconsName, Icon } from '@/ui/icon';
+import { MenuLink } from '@/ui/menu-link';
 
 import { adminRoutes } from '@/constants/pages.constant';
 

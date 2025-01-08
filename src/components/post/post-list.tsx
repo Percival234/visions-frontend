@@ -1,9 +1,9 @@
 import type { Post } from '@/types/entities/post.type';
 
+import { EmptyState } from '@/ui/empty-state';
 import { List } from '@/ui/list';
 
 import { PostCard } from '@/components/post/post-card';
-import { EmptyState } from '@/components/ui/empty-state';
 
 interface PostListProps {
   posts: Post[];
